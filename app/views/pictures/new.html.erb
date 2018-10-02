@@ -1,0 +1,19 @@
+
+<h1>New Pictures!</h1>
+
+<%= form_with scope: :picture, url: pictures_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :pictures %><br>
+    <%= form.text_area :pictures %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
