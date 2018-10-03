@@ -4,6 +4,6 @@ class PicturesController < ApplicationController
   def new
    end
   def create
-    render plain: params[:pictures].inspect
+    render plain: params[:picture].inspect
    end
 end
