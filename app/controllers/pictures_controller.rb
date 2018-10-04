@@ -7,14 +7,14 @@ class PicturesController < ApplicationController
   def new
   end
 
-def create
-  @picture = Picture.new(picture_params)
+　def create
+    @picture = Picture.new(picture_params)
 
-  @picture.save
+    @picture.save
   redirect_to @picture
 end
   private
-  def article_params
-    params.require(:article).permit(:title, :text)
-  end
+  def picture_params
+    params.require(:picture).permit(:title, :text)
+  end　
 end
