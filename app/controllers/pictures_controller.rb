@@ -1,9 +1,18 @@
 class PicturesController < ApplicationController
   def index
-   end
+  end
+　def show
+     @picture = Picture.find(params[:id])
+  end
   def new
-   end
+  end
   def create
-    render plain: params[:picture].inspect
+    @picture = Picture.new(params[:picture])
+
+　　 @picture.save
+　　　 redirect_to @picture
    end
-end
+   private
+     def picture_params
+       params.require(:picture).permit(:title, :text)
+     end
