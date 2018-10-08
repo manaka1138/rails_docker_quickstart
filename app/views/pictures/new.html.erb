@@ -4,13 +4,13 @@
 <%= form_with scope: :picture, url: pictures_path, local: true do |form| %>
 
   <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
   </p>
 
   <p>
-    <%= form.label :pictures %><br>
-    <%= form.text_area :pictures %>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
   </p>
 
   <p>
