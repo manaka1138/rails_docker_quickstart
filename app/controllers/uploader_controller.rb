@@ -18,4 +18,12 @@ class UploaderController < ApplicationController
     send_file(filepath, :filename => @upload_file.file.url.gsub(/.*\//,''), :length => stat.size)
 
   end
+
+  def destroy
+    @upload_file = Uploadfile.find(params[:id])
+    @upload_file.destroy
+
+    redirect_to upload_path
+  end
+
 end
