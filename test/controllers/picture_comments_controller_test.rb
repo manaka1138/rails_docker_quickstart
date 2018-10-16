@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CommentssTest < ActiveSupport::TestCase
+class PictureCommentsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

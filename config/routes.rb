@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resources :comments
   end
  resources :pictures do
-   resources :commentsses
+   resources :picture_comments
 end
 end

@@ -3,9 +3,9 @@
 one:
   commenter: MyString
   body: MyText
-  pictures: one
+  picture: one
 
 two:
   commenter: MyString
   body: MyText
-  pictures: two
+  picture: two
