@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'uploader/form'
   post 'uploader/upload'
   get 'uploader/download'
+  get 'uploader/destroy'
   get 'pictures/index'
   get 'welcome/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -11,5 +12,7 @@ Rails.application.routes.draw do
   end
  resources :pictures do
    resources :picture_comments
+end
+ resources :uploader do
 end
 end

@@ -20,10 +20,10 @@ class UploaderController < ApplicationController
   end
 
   def destroy
-    @upload_file = Uploadfile.find(params[:id])
+    @upload_file = UploadFile.find(params[:id])
     @upload_file.destroy
 
-    redirect_to upload_path
+    redirect_to uploader_path
   end
 
 end
