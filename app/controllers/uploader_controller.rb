@@ -5,6 +5,22 @@ class UploaderController < ApplicationController
   def form
   end
 
+  def edit
+    @upload_file = UploadFile.find(params[:id])
+  end
+
+
+  def update
+    @upload_file = UploadFile.find(params[:id])
+
+    if @upload_file.update(upload_file_params)
+      redirect_to @upload_file
+    else
+      render 'edit'
+    end
+  end
+
+
   def upload
     @upload_file = UploadFile.new( params.require(:upload_file).permit(:name, :file) )
     @upload_file.save
