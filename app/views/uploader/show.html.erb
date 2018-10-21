@@ -1,0 +1,27 @@
+<p>
+  <strong>Title:</strong>
+  <%= @upload.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @upload.text %>
+</p>
+
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @upload, @upload.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', uploader_index_path %>
+| <%= link_to 'Edit', edit_uploader_path(@upload) %>

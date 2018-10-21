@@ -23,7 +23,7 @@ class UploaderController < ApplicationController
     @upload_file = UploadFile.find(params[:id])
     @upload_file.destroy
 
-    redirect_to uploader_path
+    redirect_to uploader_index_path
   end
 
 end

@@ -14,5 +14,6 @@ Rails.application.routes.draw do
    resources :picture_comments
 end
  resources :uploader do
+   resources :comments
 end
 end
