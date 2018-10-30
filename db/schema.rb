@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_020515) do
+ActiveRecord::Schema.define(version: 2018_10_30_002817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,15 +29,6 @@ ActiveRecord::Schema.define(version: 2018_10_16_020515) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
-  end
-
-  create_table "commentsses", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.bigint "pictures_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pictures_id"], name: "index_commentsses_on_pictures_id"
   end
 
   create_table "picture_comments", force: :cascade do |t|
@@ -63,7 +54,13 @@ ActiveRecord::Schema.define(version: 2018_10_16_020515) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "uploaderforms", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "comments", "articles"
-  add_foreign_key "commentsses", "pictures", column: "pictures_id"
   add_foreign_key "picture_comments", "pictures"
 end

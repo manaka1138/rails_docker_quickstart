@@ -1,4 +1,9 @@
 class UploaderController < ApplicationController
+
+
+  def new
+  end
+
   def index
   end
 
@@ -22,7 +27,7 @@ class UploaderController < ApplicationController
 
 
   def upload
-    @upload_file = UploadFile.new( params.require(:upload_file).permit(:name, :file) )
+    @upload_file = UploadFile.new( params.require(:upload_file).permit(:name, :file, :text) )
     @upload_file.save
     redirect_to action: 'index'
   end
@@ -41,5 +46,23 @@ class UploaderController < ApplicationController
 
     redirect_to uploader_index_path
   end
+
+
+  def create
+    @upload_file = UploadFile.new(params[:upload_file])
+
+    @upload_file.save
+    redirect_to @upload_file
+
+  end
+
+  def show
+    @upload_file = UploadFile.find(params[:id])
+  end
+
+  private
+    def upload_file_params
+      params.require(:upload_file).permit(:title, :text)
+    end
 
 end

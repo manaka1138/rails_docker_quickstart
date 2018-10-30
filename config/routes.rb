@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'uploader/new'
+  get 'uploader/show'
   get 'uploader/index'
   get 'uploader/form'
   post 'uploader/upload'
