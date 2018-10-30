@@ -1,10 +1,7 @@
 class UploaderController < ApplicationController
 
-
-  def new
-  end
-
   def index
+     @upload_file = UploadFile.all
   end
 
   def form

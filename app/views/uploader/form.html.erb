@@ -1,8 +1,8 @@
 <h1>Uploader#form</h1>
 
 
-<% @upload = UploadFile.new %>
-   <%= form_for @upload, :url => {:action => :upload} do |f| %>
+<% @upload_file = UploadFile.new %>
+   <%= form_for @upload_file, :url => {:action => :upload} do |f| %>
 
 
      <%= f.label :title, "Name" %><br>

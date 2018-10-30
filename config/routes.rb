@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'uploader/new'
+  post 'uploader/new'
   get 'uploader/show'
   get 'uploader/index'
   get 'uploader/form'
