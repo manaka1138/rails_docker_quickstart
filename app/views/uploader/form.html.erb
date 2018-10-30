@@ -5,15 +5,14 @@
    <%= form_for @upload, :url => {:action => :upload} do |f| %>
 
 
-     <%= f.label :title, "name" %>
+     <%= f.label :title, "Name" %><br>
      <%= f.text_field :name %><br>
-     <br>
      <p>
        <%= f.label :text %><br>
        <%= f.text_area :text %>
      <br>
      </p>
-     <%= f.label :file %>
+     <%= f.label :file %><br>
      <%= f.file_field :file %><br>
 <br>
      <%= f.submit "Upload" %>
